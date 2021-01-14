@@ -1,46 +1,38 @@
 import React from 'react';
 import './App.css';
 
-import Background from './components/Background'
-import Heading from './components/Heading'
-import Paragraph from './components/Paragraph'
-import Button from './components/Button'
-import Form from './components/Form'
+import LoggedOut from './Views/LoggedOut'
+import LoggedIn from './Views/LoggedIn'
+import LoggingIn from './Views/LoggingIn'
+
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: "false"
+      loggedIn: "loggedIn"
     }
+  }
+
+  submitLogin = () => {
+    // this.setState({
+    //   loggedIn: 'progress'
+    // })
+    console.log('here');
   }
 
   render() {
     let {loggedIn} = this.state
-    if(loggedIn == "false") {
+    if(loggedIn === "loggedOut") {
       return (
-        <div id="container">
-          <div class="form">
-            <Heading wording="LOGIN" />
-            <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma"/>
-            <Form />
-            <Button buttonType="toggle" />
-          </div>
-          <div class="background">
-            <Background />
-          </div>
-        </div>
+       <LoggedOut submitFunction={this.submitLogin} />
       );
-    } else if(loggedIn) {
+    } else if(loggedIn === "loggedIn") {
       return (
-        <div id="container">
-          <div class="form">
-            <Heading wording="You are now logged in" />
-            <Paragraph wording="Great stuff"/>
-          </div>
-          <div class="background">
-            <Background />
-          </div>
-        </div>
+        <LoggedIn />
+      )
+    } else {
+      return(
+        <LoggingIn />
       )
     }
   }
