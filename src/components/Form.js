@@ -9,23 +9,26 @@ class Form extends React.Component {
         }
     }
 
+
+    validateForm = (e) => {
+        e.preventDefault()
+        if(this.state.username.length > 0 && this.state.password.length > 0) {
+            this.props.submitFunction()
+        }
+    }
+
     handleChange = (e) => {
         const { name, value } = e.target;
         this.setState ({
             [name]: value,
         })
     }
-
-    submitForm = () => {
-        this.props.submitFunction()
-    }
-    
     render() {
         return (
-            <form>
+            <form onSubmit={this.validateForm}>
                 <label>Username</label>
                 <input
-                    type="email"
+                    type="text"
                     name="username"
                     value={this.state.username}
                     onChange={this.handleChange}
@@ -37,7 +40,7 @@ class Form extends React.Component {
                     value={this.state.password}
                     onChange={this.handleChange}
                 />
-                <Button buttonType="formSubmit" wording="Login" clickFunction={this.submitForm} />
+                <Button buttonType="submit" wording="Login"/>
             </form>
         )
     }
