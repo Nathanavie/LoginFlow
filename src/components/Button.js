@@ -3,9 +3,9 @@ import React from 'react'
 const Button = props => {
     if(props.buttonType === "toggle") {
         return(
-            <label class="switch">
+            <label className="switch">
                 <input type="checkbox" />
-                <span class="slider round"></span>
+                <span className="slider round"></span>
             </label>
         )
     } else if(props.buttonType === "formSubmit") {
