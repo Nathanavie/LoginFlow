@@ -9,15 +9,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      loggedIn: "loggedIn"
+      loggedIn: "loggedOut"
     }
   }
 
   submitLogin = () => {
-    // this.setState({
-    //   loggedIn: 'progress'
-    // })
-    console.log('here');
+    this.setState({
+      loggedIn: 'progress'
+    })
   }
 
   render() {
@@ -25,7 +24,7 @@ class App extends React.Component {
     if(loggedIn === "loggedOut") {
       return (
        <LoggedOut submitFunction={this.submitLogin} />
-      );
+      )
     } else if(loggedIn === "loggedIn") {
       return (
         <LoggedIn />
