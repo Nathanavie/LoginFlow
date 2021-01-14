@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from './Button'
+import Paragraph from '../components/Paragraph'
+
 class Form extends React.Component {
     constructor(props){
         super(props)
@@ -26,20 +28,23 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.validateForm}>
-                <label>Username</label>
-                <input
-                    type="text"
-                    name="username"
-                    value={this.state.username}
-                    onChange={this.handleChange}
-                />
-                <label>Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={this.state.password}
-                    onChange={this.handleChange}
-                />
+                <div className="formInputContainer">
+                    <label>Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        value={this.state.username}
+                        onChange={this.handleChange}
+                    />
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.handleChange}
+                    />
+                </div>
+                <Paragraph wording="Forgot password" class="forgotPassword"/>
                 <Button buttonType="submit" wording="Login"/>
             </form>
         )

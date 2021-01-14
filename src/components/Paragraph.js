@@ -10,12 +10,12 @@ const Paragraph = props => {
             ending = wording.slice((thisSpan + span.length), wording.length)
         
         return (
-            <p>{beginning}<span>{span}</span>{ending}</p>
+            <p className={props.class}>{beginning}<span>{span}</span>{ending}</p>
         )
 
     } else {
         return (
-            <p>{props.wording}</p>
+            <p className={props.class}>{props.wording}</p>
         )
     }
 }

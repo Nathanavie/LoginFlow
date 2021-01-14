@@ -6,7 +6,7 @@ import Background from '../components/Background'
 const LoggedIn = () => {
     return (
       <div id="container">
-      <div className="form">
+      <div className="formContainer">
         <Heading wording="You are now logged in" />
         <Paragraph wording="Great stuff"/>
       </div>

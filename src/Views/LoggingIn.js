@@ -7,10 +7,10 @@ import Background from '../components/Background'
 const LoggingIn = () => {
     return (
       <div id="container" className="faded">
-      <div className="form">
+      <div className="formContainer">
         <div className="form-headings">
           <Heading wording="LOGIN" />
-          <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma"/>
+          <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma" class="intro"/>
         </div>
         <div className="form">
         </div>

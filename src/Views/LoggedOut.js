@@ -8,10 +8,10 @@ import Background from '../components/Background'
 const LoggedOut = props => {
     return (
         <div id="container">
-          <div className="form">
+          <div className="formContainer">
             <div className="form-headings">
               <Heading wording="LOGIN" />
-              <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma"/>
+              <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma" class="intro"/>
             </div>
             <div className="form-inputs">
               <Form submitFunction={props.submitFunction} />
