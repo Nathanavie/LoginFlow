@@ -21,9 +21,7 @@ const LoggedOut = props => {
               <Button buttonType="toggle" />
             </div>
           </div>
-          <div className="background">
-            <Background />
-          </div>
+            <Background class="background"/>
         </div>
     )
 }

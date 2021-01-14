@@ -2,6 +2,7 @@ import React from 'react';
 import Heading from '../components/Heading'
 import Paragraph from '../components/Paragraph'
 import Button from '../components/Button'
+import Background from '../components/Background'
 
 const LoggingIn = () => {
     return (
@@ -14,9 +15,11 @@ const LoggingIn = () => {
         <div className="form">
         </div>
         <div className="form-footer">
+          <Paragraph wording="Remember my password" />
           <Button buttonType="toggle" />
         </div>
       </div>
+      <Background class="background"/>
       <div id="loadingAnimation">
         {/* <Animation /> */}
         <Paragraph wording="Logging in..." span="..."/>

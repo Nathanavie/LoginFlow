@@ -6,7 +6,6 @@
   height: 34px;
 }
 
-
 .switch input {
   opacity: 0;
   width: 0;
@@ -57,4 +56,32 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+/* Basic Layout */
+
+#container {
+  display: flex;
+}
+
+.form {
+  background: #F7F8FD;
+  padding: 5em;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 30% 60% 30%
+}
+
+.form-headings, .form-inputs, .form-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.background {
+  background-image: url('./assets/login_illustration.png');
+  background-size: 70%;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
 }

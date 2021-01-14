@@ -10,9 +10,7 @@ const LoggedIn = () => {
         <Heading wording="You are now logged in" />
         <Paragraph wording="Great stuff"/>
       </div>
-      <div className="background">
-        <Background />
-      </div>
+      <Background class="background"/>
     </div>
     )
 }
