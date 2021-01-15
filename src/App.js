@@ -19,6 +19,12 @@ class App extends React.Component {
     })
   }
 
+  completeLogin = () => {
+    this.setState({
+      loggedIn: 'loggedIn'
+    })
+  }
+
   render() {
     let {loggedIn} = this.state
     if(loggedIn === "loggedOut") {
@@ -31,7 +37,7 @@ class App extends React.Component {
       )
     } else {
       return(
-        <LoggingIn />
+        <LoggingIn nowLogIn={this.completeLogin} />
       )
     }
   }
