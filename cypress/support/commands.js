@@ -1,25 +1,23 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("doesContain", (element, wording) => {
+    cy.get(element).contains(wording)
+})
+
+Cypress.Commands.add("triggerClick", (element) => {
+    cy.get(element).click({force: true})
+})
+
+Cypress.Commands.add("inputText", (element, wording) => {
+    cy.get(element).type(wording)
+})
+
+Cypress.Commands.add("isVisible", (element) => {
+    cy.get(element).should('be.visible')
+})
+
+Cypress.Commands.add("checkWordingFromArray", (element, wording) => {
+    cy.get(element).should('have.length', wording.length).then(el => {
+        el.map((i, val) => {
+            assert.equal(val.textContent, wording[i], `wording ${i} checked`)
+        })
+    })
+})
