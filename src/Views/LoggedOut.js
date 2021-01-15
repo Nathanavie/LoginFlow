@@ -9,9 +9,9 @@ const LoggedOut = props => {
     return (
         <div id="container">
           <div className="formContainer">
-            <div className="form-headings">
+            <div className="form-headings popIn">
               <Heading wording="LOGIN" />
-              <Paragraph wording="Login with your Gamma cloud telephone account" span="Gamma" class="intro"/>
+              <Paragraph wording="Login with your Gamma cloud telephony account." span="Gamma" class="intro"/>
             </div>
             <div className="form-inputs">
               <Form submitFunction={props.submitFunction} />
@@ -21,7 +21,7 @@ const LoggedOut = props => {
               <Button buttonType="toggle" />
             </div>
           </div>
-            <Background class="background"/>
+            <Background class="background popIn"/>
         </div>
     )
 }
