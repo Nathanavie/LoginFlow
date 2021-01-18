@@ -4,7 +4,7 @@ describe('Check that the login flow shows the correct wording and animations', (
     })
 
     it('Load the project in localhost on port 3000', () => {
-        cy.visit('http://localhost:3000')
+        cy.visit('https://loginflowtechtest.netlify.app/')
     })
     
     it('Check the h1 tag says "LOGIN"', () => {
